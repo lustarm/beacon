@@ -1,0 +1,13 @@
+[defaults]
+interval_seconds = 30
+timeout_seconds = 5
+
+[[targets]]
+name = "marketing-site"
+url = "https://example.com"
+
+[[targets]]
+name = "client-api"
+url = "https://api.example.com/health"
+interval_seconds = 10
+timeout_seconds = 3
