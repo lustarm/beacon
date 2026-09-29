@@ -1,10 +1,16 @@
+use serde::{Deserialize, Serialize};
+
+#[derive(Serialize, Deserialize)]
 pub struct GetStatusRequest {
-    url: String
+    pub url: String
 }
 
+#[derive(Serialize, Deserialize)]
 pub struct GetStatusResult {
     url: String,
     online: bool
 }
+
+
 
 

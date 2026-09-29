@@ -1,6 +1,7 @@
-use std::{thread::sleep, time::Duration, io::Result};
+use std::io::Result;
 use reqwest::{StatusCode, Client};
 use slog::{Drain, Logger, error, info, o};
+use tokio::time::{sleep, Duration};
 
 mod config;
 mod routes;
@@ -86,7 +87,7 @@ async fn main() -> Result<()> {
                     _ => ()
                 }
 
-                sleep(std::time::Duration::from_secs(sleep_time.into()));
+                let _ = sleep(std::time::Duration::from_secs(sleep_time.into())).await;
             }
         }
     });
