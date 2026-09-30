@@ -1,7 +1,9 @@
 pub mod root;
 pub use root::root;
 
-pub mod checkUrl;
-pub use checkUrl::checkUrl;
+pub mod check_url;
+pub use check_url::check_url;
 
-mod structs;
+pub mod structs;
+pub use structs::GetStatusResult;
+pub use structs::GetStatusRequest;

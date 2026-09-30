@@ -8,8 +8,7 @@ mod routes;
 
 /* TODO: Backend in rust */
 use axum::{
-    routing::get,
-    Router,
+    Router, routing::{get, post},
 };
 
 async fn get_status(url: &str, timeout: u32, logger: Logger) -> StatusCode {
@@ -49,7 +48,8 @@ async fn main() -> Result<()> {
         info!(t_logger, "Starting HTTP server thread");
 
         let app = Router::new()
-            .route("/", get(routes::root));
+            .route("/", get(routes::root))
+            .route("/check_url", post(routes::check_url));
 
         let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
         info!(t_logger, "Listening for HTTP connections on port 3000");

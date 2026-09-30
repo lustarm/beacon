@@ -7,8 +7,8 @@ pub struct GetStatusRequest {
 
 #[derive(Serialize, Deserialize)]
 pub struct GetStatusResult {
-    url: String,
-    online: bool
+    pub url: String,
+    pub online: bool
 }
 
 
